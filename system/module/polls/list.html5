@@ -1,0 +1,32 @@
+<?php if($lc == 1) : ?>
+	
+	<h1>Umfragen <a href="umfragen/hinzufuegen.html" title="Umfrage hinzufügen"><img src="img/system/add.svg" alt="Plus" title="Umfrage hinzufügen"></a></h1>
+	<p>Hier finden Sie alle bereits erstellten Umfragen. Um eine Umfrage anzusehen, klicken Sie einfach auf den Titel.</p>
+	
+	<div class="table">
+		<div class="header">
+			<div class="row">
+				<div class="cell">Datum</div>
+				<div class="cell">Betreff</div>
+				<div class="cell">Sendedatum</div>
+				<div class="cell">&nbsp;</div>
+			</div>
+		</div>
+	
+<?php endif; ?>
+
+		<div class="row">
+			<div class="cell"><?= $datetime ?></div>
+			<div class="cell"><a href="mailing/<?= $id ?>/details.html" title="Umfrage aufrufen"><?= $subject ?></a></div>
+			<div class="cell"><?= $senddatetime ?></div>
+			<div class="cell c">
+				<a href="mailing/<?= $id ?>/edit.html" title="Umfrage bearbeiten"><img src="img/system/edit.svg" alt="Stift" title="Umfrage bearbeiten"></a>
+				<a href="mailing/<?= $id ?>/del.html" title="Umfrage löschen"><img src="img/system/del.svg" alt="Stop" title="Umfrage löschen"></a>
+			</div>
+		</div>
+
+<?php if($lc == $tl) : ?>
+	
+	</div>
+	
+<?php endif; ?>

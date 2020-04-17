@@ -1,0 +1,32 @@
+<h1>Umfrage hinzufügen</h1>
+<p>Geben Sie einen Titel sowie die Umfrage ein. Oberhalb des Textfeldes, finden Sie Platzhalter, die Sie im Text verwenden können.</p>
+
+<form action="umfragen/hinzufuegen.html" method="post" name="add">
+	<div class="formbody">
+		
+		<?= $errmsg ?>
+		
+		<div class="widget-text">
+			<label for="title">Titel (Intern)</label>
+			<input type="text" name="title" id="title" value="<?= $ptitle ?>" required autofocus>
+		</div>
+		<div class="widget-full">
+			<label for="poll">Umfrage</label>
+			<p>Hier können Sie die Umfrage gestalten und Variablen nutzen, die beim Versand automatisch ersetzt werden:</p>
+			<ul class="flex">
+				<li>Für einen Absatz drücken Sie Enter.</li>
+				<li>Für einen Zeilenumbruch halten Sie STRG gedrückt und wählen dann Enter.</li>
+				<li>Für Titel wählen Sie den Button mit dem kleinen q.</li>
+				<li>$SAL wird ersetzt durch "Sehr geehrte" oder "Sehr geehrter" (entsprechend der Anrede).</li>
+				<li>Für die Anrede geben Sie $ANREDE ein.</li>
+				<li>$VORNAME ersetzt die Variable mit dem Vornamen.</li>
+				<li>$NACHNAME ersetzt die Variable mit dem Nachnamen.</li>
+			</ul>
+			<div id="editor"><?= $peditor ?></div>
+		</div>
+	</div>
+	<div class="widget-submit">
+		<button type="submit" name="submit">Umfrage speichern</button>
+		<input type="hidden" name="savepolls" value="yes">
+	</div>
+</form>
